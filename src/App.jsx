@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import Products from "./components/Products";
 
 const App = () => {
 
@@ -7,6 +8,7 @@ const App = () => {
     <div className="container flex-col text-center h-full bg-white">
       <Navbar />
       <Hero />
+      <Products />
 
     </div>
    );
