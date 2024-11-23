@@ -6,7 +6,7 @@ const Products = () => {
                 <a className="hover:text-blue-700" href="/">view all &#8594;</a>
             </div>
             <div className="flex flex-row flex-wrap container items-center mt-6 px-2">
-                <div className="flex flex-col space-y-2 h-fit w-[200px] rounded pb-6 hover:shadow-md">
+                <div className="flex flex-col space-y-2 h-fit w-[200px] rounded pb-6 border hover:shadow-md">
                     <div className="h-[200px] w-full bg-gray-200 rounded flex flex-col items-center space-y-3 p-6">
                         <div className="rounded p-1 w-12 bg-red-700 text-white text-xs self-start">-30%</div>
                         <img className="w-[80px] h-auto items-center" src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" alt="product" />
