@@ -3,7 +3,7 @@ const AllProducts = () => {
         <div className="container mt-10 px-6 flex flex-col ">
             <div className="flex flex-row justify-between items-center px-2 py-3 border-l-8 border-blue-700 h-fit ">
                 <h1>All Products</h1>
-                <a className="hover:text-blue-700" href="/">&#8594; back home</a>
+                <a className="hover:text-blue-700" href="/">&#8592; back home</a>
               </div>
             <div className="flex flex-row flex-wrap container items-center mt-6 px-2">
                 <div className="flex flex-col space-y-2 h-fit w-[200px] rounded pb-6 border hover:shadow-md">

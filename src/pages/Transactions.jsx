@@ -10,9 +10,32 @@ const Transactions = () => {
           <option value="Purchases">Purchases</option>
           <option value="Transfer">Transfer</option>
         </select>
-        <a className="hover:text-blue-700" href="/"> &#852;back home</a>
+        <a className="hover:text-blue-700" href="/"> &#8592; back home</a>
       </div>
-      <div>
+      <div className=" container flex flex-col mt-6 space-y-2">
+        <div className="flex flex-row shadow-md items-center justify-between py-4 px-2">
+          <div>
+            <h1 className="font-bold">Sales</h1>
+            <p className="text-gray-400">Men T Shirt</p>
+            <p className="text-xs">2024-11-23, 10:54:am</p>
+          </div>
+          <div>
+            <h1 className="font-bold">+$4100</h1>
+            <p className="text-green-700">Sucess</p>
+          </div>
+        </div>
+        
+        <div className="flex flex-row shadow-md items-center justify-between py-4 px-2">
+          <div>
+            <h1 className="font-bold">Purchases</h1>
+            <p className="text-gray-400">Shool bag</p>
+            <p className="text-xs">2024-11-10, 1:54:am</p>
+          </div>
+          <div>
+            <h1 className="font-bold">-$3000</h1>
+            <p className="text-red-700">Failed</p>
+          </div>
+        </div>
         
       </div>
     </div>
