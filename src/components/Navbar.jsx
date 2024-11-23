@@ -8,7 +8,7 @@ const Navbar = () => {
                 <input className='border-none outline-none' type="text" name="search" id="search" placeholder="Search Product" />
                 <button type="submit"><img className='w-6 h-auto' src={search} alt="search-icon" /></button>
             </form>
-            <ul className="flex flex-row space-x-6 items-center ">
+            <ul className="flex flex-row space-x-6 items-center sm: hidden">
                 <li className="hover:text-blue-700"><a href="/">Home</a></li>
                 <li className="hover:text-blue-700"><a href="#">Products</a></li>
                 <li className="hover:text-blue-700"><a href="">Transactions</a></li>
