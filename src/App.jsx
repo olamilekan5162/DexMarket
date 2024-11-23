@@ -1,17 +1,17 @@
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Products from "./components/Products";
-import Footer from "./components/Footer";
+import {Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from 'react-router-dom';
+import MainLayout from "./layouts/MainLayout";
+import Homepage from "./pages/Homepage";
 
 
+const router = createBrowserRouter(createRoutesFromElements( <Route path='/' element={<MainLayout />}>
+<Route index element={<Homepage />} />
+</Route>
+  ))
 
 const App = () => {
   return ( 
     <div className="container flex-col text-center h-full bg-white">
-      <Navbar />
-      <Hero />
-      <Products />
-      <Footer />
+      <RouterProvider router={router}/>
     </div>
    );
 }
