@@ -2,7 +2,7 @@ import search from '../assets/icons/icons8-search.svg'
 import profile from '../assets/images/loko.jpg'
 const Navbar = () => {
     return ( 
-        <div className="container h-24 flex flex-row shadow-md px-6 items-center justify-between">
+        <div className="container h-24 flex flex-row shadow-md px-6 items-center justify-between fixed top-0 left-0 bg-white">
             <div className="text-blue-700 font-semibold">DEX<span className="text-black">MARKET</span></div>
             <form action="/" className="border border-black min-w-6 rounded-md p-2 flex items-center">
                 <input className='border-none outline-none' type="text" name="search" id="search" placeholder="Search Product" />
