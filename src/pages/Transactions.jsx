@@ -1,7 +1,7 @@
 const Transactions = () => {
   return (
     <div className="container flex flex-col p-6 ">
-      <h1 className="font-bold text-xl">Transactions</h1>
+      <h1 className="font-bold text-blue-700 text-xl">Transactions</h1>
       
       <div className="flex flex-row justify-between items-center px-2 py-3 border-l-8 border-blue-700 h-fit mt-6">
         <select className="border-none outline-none p-2 bg-transparent font-semibold">
@@ -13,7 +13,7 @@ const Transactions = () => {
         <a className="hover:text-blue-700" href="/"> &#8592; back home</a>
       </div>
       <div className=" container flex flex-col mt-6 space-y-2">
-        <div className="flex flex-row shadow-md items-center justify-between py-4 px-2">
+        <div className="flex flex-row shadow-md items-center justify-between py-4 px-2 hover:border-2">
           <div>
             <h1 className="font-bold">Sales</h1>
             <p className="text-gray-400">Men T Shirt</p>

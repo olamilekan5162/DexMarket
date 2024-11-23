@@ -1,7 +1,8 @@
 const AllProducts = () => {
     return ( 
-        <div className="container mt-10 px-6 flex flex-col ">
-            <div className="flex flex-row justify-between items-center px-2 py-3 border-l-8 border-blue-700 h-fit ">
+        <div className="container mt-2 px-6 flex flex-col ">
+            <h1 className="font-bold text-blue-700 text-xl">All Exclusive Products</h1>
+            <div className="flex flex-row justify-between items-center px-2 py-3 border-l-8 border-blue-700 h-fit mt-6 ">
                 <h1>All Products</h1>
                 <a className="hover:text-blue-700" href="/">&#8592; back home</a>
               </div>
