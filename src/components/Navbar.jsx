@@ -1,4 +1,5 @@
 import search from '../assets/icons/icons8-search.svg'
+import profile from '../assets/images/loko.jpg'
 const Navbar = () => {
     return ( 
         <div className="contaier h-24 flex flex-row shadow-md px-6 items-center justify-between">
@@ -11,6 +12,7 @@ const Navbar = () => {
                 <li className="hover:text-blue-700"><a href="/">Home</a></li>
                 <li className="hover:text-blue-700"><a href="#">Products</a></li>
                 <li className="hover:text-blue-700"><a href="">Transactions</a></li>
+                <li className='w-9 h-9 rounded-full overflow-hidden'><img className='w-9 h-auto' src={profile} alt="profile" /></li>
                 <li><button className="p-1 font-medium border border-blue-700 rounded-md hover:bg-blue-700 hover:text-white">Connect Wallet</button></li>
             </ul>
 
