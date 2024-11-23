@@ -6,6 +6,6 @@ import Transactions from "./pages/Transactions";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AllProducts />
+    <Transactions />
   </StrictMode>,
 )
