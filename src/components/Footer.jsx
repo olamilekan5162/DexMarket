@@ -1,18 +1,36 @@
+import { Link } from "react-router-dom";
 const Footer = () => {
   return ( 
       <div className="min-h-[200px] mt-20 bg-blue-950 text-white grid grid-cols-4 p-10">
-          <div>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, velit id. Aliquam, nesciunt ea?</p>
+          <div className="text-left">
+            <h1 className="text-xl font-bold">DexMarket</h1>
+              <p>A first class and number one goto decentralized exchange market</p>
+              <p className="font-bold">Created by Oracle &copy; 2024</p>
           </div>
-          <div className="flex flex-col tte">
+          <div className="flex flex-col text-left items-center">
               <p className="font-bold">Quick Links</p>
-              <a href="">Home</a>
+              <ul>
+                <li className="hover:text-blue-700"><Link to="/">Home</Link></li>
+                <li className="hover:text-blue-700"><Link to="/allproducts">All Products</Link></li>
+                <li className="hover:text-blue-700"><Link to="/">Solana</Link></li>
+                <li className="hover:text-blue-700"><Link to="/">MetaMask</Link></li>
+              </ul>
           </div>
-          <div>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, velit id. Aliquam, nesciunt ea?</p>
+          <div className="text-left">
+              <p className="font-bold ">Accounts</p>
+              <ul>
+                <li className="hover:text-blue-700"><Link to="/">My account</Link></li>
+                <li className="hover:text-blue-700"><Link to="/transactions">transactions</Link></li>
+                
+              </ul>
           </div>
-          <div>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, velit id. Aliquam, nesciunt ea?</p>
+          
+          <div className="text-left">
+              <p className="font-bold ">Contact Information</p>
+              <ul>
+                <li className="hover:text-blue-700"><Link to="/">My account</Link></li>
+                <li className="hover:text-blue-700"><Link to="/transactions">transactions</Link></li>
+              </ul>
           </div>
 
       </div>
