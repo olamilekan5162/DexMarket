@@ -4,7 +4,6 @@ import Homepage from "./pages/Homepage";
 import AllProducts from "./pages/AllProducts";
 import Transactions from './pages/Transactions';
 import AddProduct from './pages/AddProduct';
-import SingleProduct from './pages/SingleProduct';
 import NotFound from './pages/NotFound';
 
 
@@ -16,7 +15,6 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/allproducts' element={<AllProducts />} />
     <Route path='/transactions' element={<Transactions />} />
     <Route path='/addProduct' element={<AddProduct />} />
-    <Route path='/singleProduct' element={<SingleProduct />} />
   </Route>
   <Route path='*' element={<NotFound />} />
 
