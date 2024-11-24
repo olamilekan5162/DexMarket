@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 const Transactions = () => {
   return (
-    <div className="container flex flex-col p-6 mt-32">
+    <div className="container flex flex-col px-6 mt-6">
       <h1 className="font-bold text-blue-700 text-xl">Transactions</h1>
       
       <div className="flex flex-row justify-between items-center p-2 border-l-8 border-blue-700 h-fit mt-6">
@@ -35,6 +35,18 @@ const Transactions = () => {
           <div className='text-right'>
             <h1 className="font-bold">-$3000</h1>
             <p className="text-red-700">Failed</p>
+          </div>
+        </div>
+        
+        <div className="flex flex-row border-b-2 items-center justify-between p-3 hover:shadow-md">
+          <div className='text-left'>
+            <h1 className="font-bold">Transfer</h1>
+            <p className="text-gray-400">Transfer to Freed</p>
+            <p className="text-xs">2024-11-25, 11:54:pm</p>
+          </div>
+          <div className='text-right'>
+            <h1 className="font-bold">-$1000</h1>
+            <p className="text-green-700">Success</p>
           </div>
         </div>
         

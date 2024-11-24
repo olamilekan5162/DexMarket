@@ -7,13 +7,18 @@ const AddProduct = () => {
   const [description, setDescription] = useState('')
   const [image, setImage] = useState('')
   
-  const submitProduct = () => {
-    
+  const submitProduct = (e) => {
+    e.preventDefault()
+    alert(`name: ${name}
+    price: ${price}
+    description: ${description}
+    image url: ${image}`)
   }
   
   return (
-    <div className="container flex items-center justify-center p-6 mt-32">
-      <form action="/" className="w-full min-w-24 border-2 rounded border-blue-700 mx-6 pb-6 px-10">
+    <div className="container flex items-center justify-center p-6 mt-6">
+      <form action="/" className="w-full min-w-24 border-2 rounded border-blue-700 mx-6 pb-6 px-10"
+      onSubmit={submitProduct}>
         <fieldset>
           <legend className="text-blue-700 p-4 font-bold text-xl">Add Product</legend>
           
@@ -23,7 +28,9 @@ const AddProduct = () => {
             type="text" 
             name="product" 
             value={name}
+            onChange={(e) => setName(e.target.value)}
             id="product" 
+            required
             placeholder="Enter the nane of the Product"
             className="w-full p-3 border-none bg-gray-100 rounded my-2 outline-1 outline-blue-700" />
           </label>
@@ -34,7 +41,9 @@ const AddProduct = () => {
             type="number" 
             name="price" 
             value={price}
+            onChange={(e) => setPrice(e.target.value)}
             id="price" 
+            required
             placeholder="Enter the price of the product" 
             className="w-full p-3 bg-gray-100 rounded my-2 outline-1 outline-blue-700" />
           </label>
@@ -44,7 +53,9 @@ const AddProduct = () => {
             <textarea 
             name="description" 
             id="description"
+            required
             value={description}
+            onChange={(e) => setDescription(e.target.value)}
             placeholder="Enter the product description"
             className="w-full p-3 bg-gray-100 rounded my-2 outline-1 outline-blue-700">
             </textarea>
@@ -56,6 +67,8 @@ const AddProduct = () => {
             type="text" 
             name="image" 
             value={image}
+            required
+            onChange={(e) => setImage(e.target.value)}
             id="image" 
             placeholder="Enter the product image link" 
             className="w-full p-3 bg-gray-100 rounded my-2 outline-1 outline-blue-700" />
