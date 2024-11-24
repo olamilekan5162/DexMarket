@@ -1,4 +1,16 @@
+import { useState } from 'react'
+import ProductDb from '../../ProductDb.json'
 const AddProduct = () => {
+  
+  const [name, setName] = useState('')
+  const [price, setPrice] = useState(0)
+  const [description, setDescription] = useState('')
+  const [image, setImage] = useState('')
+  
+  const submitProduct = () => {
+    
+  }
+  
   return (
     <div className="container flex items-center justify-center p-6 mt-32">
       <form action="/" className="w-full min-w-24 border-2 rounded border-blue-700 mx-6 pb-6 px-10">
@@ -9,7 +21,9 @@ const AddProduct = () => {
             Product Name:
             <input 
             type="text" 
-            name="product" id="product" 
+            name="product" 
+            value={name}
+            id="product" 
             placeholder="Enter the nane of the Product"
             className="w-full p-3 border-none bg-gray-100 rounded my-2 outline-1 outline-blue-700" />
           </label>
@@ -19,6 +33,7 @@ const AddProduct = () => {
             <input 
             type="number" 
             name="price" 
+            value={price}
             id="price" 
             placeholder="Enter the price of the product" 
             className="w-full p-3 bg-gray-100 rounded my-2 outline-1 outline-blue-700" />
@@ -29,6 +44,7 @@ const AddProduct = () => {
             <textarea 
             name="description" 
             id="description"
+            value={description}
             placeholder="Enter the product description"
             className="w-full p-3 bg-gray-100 rounded my-2 outline-1 outline-blue-700">
             </textarea>
@@ -39,6 +55,7 @@ const AddProduct = () => {
             <input 
             type="text" 
             name="image" 
+            value={image}
             id="image" 
             placeholder="Enter the product image link" 
             className="w-full p-3 bg-gray-100 rounded my-2 outline-1 outline-blue-700" />
