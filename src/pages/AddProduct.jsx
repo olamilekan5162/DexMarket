@@ -1,19 +1,13 @@
 const AddProduct = () => {
   return (
-    <div className="container flex items-center justify-center p-6">
-      
-      <form>
+    <div className="container flex items-center justify-center p-6 mt-32">
+      <form action="/" className="w-full bottom-1">
         <fieldset>
-          <legend className="font-bold text-blue-700 p-4">ADD PRODUCT</legend>
-          <label for="product">
-            Product Name
-            <input type="text" name="product" id="product"/>
+          <legend className="text-blue-700 p-4 font-bold">Add Product</legend>
+          <label htmlFor="product" className="inline-block">
+            Product Name:
+            <input type="text" name="product" id="product" placeholder="Enter the nane of the Product" />
           </label>
-          <label for="price">
-            Product Price
-            <input type="number" name="price" id="price"/>
-          </label>
-          
         </fieldset>
       </form>
     </div>
