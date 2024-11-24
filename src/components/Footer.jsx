@@ -12,14 +12,14 @@ const Footer = () => {
               <ul>
                 <li className="hover:text-blue-700"><Link to="/">Home</Link></li>
                 <li className="hover:text-blue-700"><Link to="/allproducts">All Products</Link></li>
-                <li className="hover:text-blue-700"><Link to="/">Solana</Link></li>
-                <li className="hover:text-blue-700"><Link to="/">MetaMask</Link></li>
+                <li className="hover:text-blue-700"><Link to="/solana">Solana</Link></li>
+                <li className="hover:text-blue-700"><Link to="/metamask">MetaMask</Link></li>
               </ul>
           </div>
           <div className="text-left">
               <p className="font-bold ">Accounts</p>
               <ul>
-                <li className="hover:text-blue-700"><Link to="/">My account</Link></li>
+                <li className="hover:text-blue-700"><Link to="/account">My account</Link></li>
                 <li className="hover:text-blue-700"><Link to="/transactions">transactions</Link></li>
                 
               </ul>
@@ -27,10 +27,8 @@ const Footer = () => {
           
           <div className="text-left">
               <p className="font-bold ">Contact Information</p>
-              <ul>
-                <li className="hover:text-blue-700"><Link to="/">My account</Link></li>
-                <li className="hover:text-blue-700"><Link to="/transactions">transactions</Link></li>
-              </ul>
+              <p>contact me at Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, libero!</p>
+              
           </div>
 
       </div>

@@ -5,9 +5,11 @@ import AllProducts from "./pages/AllProducts";
 import Transactions from './pages/Transactions';
 import AddProduct from './pages/AddProduct';
 import SingleProduct from './pages/SingleProduct';
+import NotFound from './pages/NotFound';
 
 
 const router = createBrowserRouter(createRoutesFromElements(
+  <>
 
   <Route path='/' element={<MainLayout />}>
     <Route index element={<Homepage />} />
@@ -16,6 +18,9 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/addProduct' element={<AddProduct />} />
     <Route path='/singleProduct' element={<SingleProduct />} />
   </Route>
+  <Route path='*' element={<NotFound />} />
+
+  </>
 
 ));
 
