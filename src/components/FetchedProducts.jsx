@@ -29,8 +29,7 @@ const FetchedProducts = ({isHome}) => {
                 </div>
           )
         })
-      }
-                
+      }  
             </div>
     )
 }
