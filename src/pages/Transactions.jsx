@@ -14,7 +14,7 @@ const Transactions = () => {
         <Link className="hover:text-blue-700" to="/"> &#8592; back home</Link>
       </div>
       <div className=" container flex flex-col gap-4">
-        <div className="flex flex-row border-b border-blue-700 items-center justify-between py-4 px-2 hover:shadow-lg">
+        <div className="flex flex-row border-b border-blue-700 items-center justify-between p-2 hover:shadow-lg">
           <div className='text-left'>
             <h1 className="font-bold">Sales</h1>
             <p className="text-gray-500">Men T Shirt</p>
@@ -26,7 +26,7 @@ const Transactions = () => {
           </div>
         </div>
         
-        <div className="flex flex-row border-b-2 items-center justify-between p-3 hover:shado">
+        <div className="flex flex-row border-b border-blue-700 items-center justify-between p-2 hover:shadow-lg">
           <div className='text-left'>
             <h1 className="font-bold">Purchases</h1>
             <p className="text-gray-400">Shool bag</p>
@@ -38,7 +38,7 @@ const Transactions = () => {
           </div>
         </div>
         
-        <div className="flex flex-row border-b-2 items-center justify-between p-3 hover:shadow-md">
+        <div className="flex flex-row border-b border-blue-700 items-center justify-between p-2 hover:shadow-lg">
           <div className='text-left'>
             <h1 className="font-bold">Transfer</h1>
             <p className="text-gray-400">Transfer to Freed</p>

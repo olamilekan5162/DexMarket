@@ -8,7 +8,7 @@ const FetchedProducts = ({isHome}) => {
     prod = ProductDb
   }
   return (
-    <div className="w-full flex flex-row flex-wrap px-auto justify-center gap-4 border-2 border-red-700">
+    <div className="w-full flex flex-row flex-wrap px-auto justify-center gap-4">
       {
         prod.map((product) =>{
           const discount = Math.floor(Math.random() * 50)
