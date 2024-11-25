@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const Footer = () => {
   return ( 
-      <div className="min-h-[200px] mt-6 bg-blue-950 text-white text-sm grid grid-cols-4 gap-3 p-4">
+      <div className="min-h-[200px] mt-10 bg-blue-950 text-white text-sm grid grid-cols-4 gap-3 p-4">
           <div className="flex flex-col text-left gap-1">
             <h1 className="text-xl font-bold">DexMarket</h1>
               <p>A first class and number one goto decentralized exchange market</p>

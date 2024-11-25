@@ -16,7 +16,7 @@ const AddProduct = () => {
   }
   
   return (
-    <div className="w-full flex items-center justify-center px-6 mt-6">
+    <div className="w-full flex items-center justify-center px-6 mt-28">
       <form action="/" className="w-full min-w-24 border-2 rounded border-blue-700 py-6 px-10" onSubmit={submitProduct}>
         <fieldset>
           <legend className="text-blue-700 p-4 font-bold text-xl text-center">Add Product</legend>
