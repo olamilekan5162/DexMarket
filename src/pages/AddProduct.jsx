@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import ProductDb from '../../ProductDb.json'
+// import ProductDb from '../../ProductDb.json'
 const AddProduct = () => {
   
   const [name, setName] = useState('')

@@ -1,11 +1,11 @@
 import search from '../assets/icons/icons8-search.svg'
 import profile from '../assets/images/loko.jpg'
-import menu from '../assets/icons/menu.svg'
+// import menu from '../assets/icons/menu.svg'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return ( 
-        <div className="overflow-hidden md:container h-24 flex flex-row shadow-md px-6 items-center justify-between bg-white">
+        <div className="w-full h-24 flex flex-row shadow-md px-6 items-center justify-between bg-white">
             <div className="text-blue-700 font-semibold">DEX<span className="text-black">MARKET</span></div>
             <form action="/" className="border border-black justify-between rounded-md p-2 flex flex-row items-center">
                 <input className='border-none outline-none' type="text" name="search" id="search" placeholder="Search Product" />

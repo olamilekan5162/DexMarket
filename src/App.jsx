@@ -24,10 +24,9 @@ const router = createBrowserRouter(createRoutesFromElements(
 
 const App = () => {
   return ( 
-    <div className="container flex-col text-center h-full bg-white">
+    <>
       <RouterProvider router={router}/>
-    </div>
-   );
-}
+    </>
+   );}
  
 export default App;
