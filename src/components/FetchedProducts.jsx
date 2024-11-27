@@ -7,6 +7,11 @@ const FetchedProducts = ({isHome}) => {
   }else{
     prod = ProductDb
   }
+    
+    const buy = (productName) => {
+        alert(`${productName} bought successfully`)
+
+    }
   return (
     <div className="w-full flex flex-row flex-wrap px-auto justify-center gap-4">
       {
@@ -25,7 +30,9 @@ const FetchedProducts = ({isHome}) => {
                         <span className='line-through text-red-700'>${product.price}</span> 
                         <span className='text-blue-700'> ${discountedPrice.toFixed(2)}</span>
                     </p>
-                    <Link to="/" className="self-center rounded text-white bg-blue-700 px-auto py-2 min-w-16">Buy</Link>
+                    <button 
+              className="self-center rounded text-white bg-blue-700 px-auto py-2 min-w-16"
+              onClick={() => buy(product.name)}>Buy</button>
                 </div>
           )
         })
