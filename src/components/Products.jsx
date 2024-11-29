@@ -7,7 +7,7 @@ const Products = () => {
                 <h1>Our Products</h1>
                 <Link className="hover:text-blue-700" to="/allproducts">view all &#8594;</Link>
             </div>
-            <FetchedProducts isHome={true}/>
+            <FetchedProducts />
         </div>
      );
 }

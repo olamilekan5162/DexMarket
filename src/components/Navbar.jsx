@@ -5,7 +5,7 @@ import useConnectWallet from '../hooks/useConnectWallet'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
-  const {connectWallet, account, isConnected} = useConnectWallet();
+  const { connectWallet, account, isConnected } = useConnectWallet();
   
     return ( 
         <div className="w-full h-24 flex flex-row shadow-md px-6 items-center justify-between bg-white fixed top-0 left-0">
@@ -18,7 +18,7 @@ const Navbar = () => {
                 <li className="hover:text-blue-700"><Link to="/">Home</Link></li>
                 <li className="hover:text-blue-700"><Link to="/transactions">Transactions</Link></li>
                 <li className='w-9 h-9 rounded-full overflow-hidden'><img className='w-9 h-9' src={profile} alt="profile" /></li>
-                <li><button className="p-1 border border-blue-700 rounded-md hover:bg-blue-700 hover:text-white" onClick={connectWallet}>{isConnected ? account : 'Connect Wallet'}</button></li>
+                <li><button className="p-1 border border-blue-700 rounded-md hover:bg-blue-700 hover:text-white" onClick={() => connectWallet()}>{isConnected ? `${account.slice(0,5)}...${account.slice(-5)}` : 'Connect Wallet'}</button></li>
             </ul>
         </div>
      );

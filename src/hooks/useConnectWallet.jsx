@@ -33,6 +33,7 @@ const useConnectWallet = () => {
   
       console.log(account);
     } catch (switchError) {
+      console.log(switchError)
       if (switchError.code === 4902) {
         alert("Please connect to the Sepolia Network");
     }
