@@ -14,7 +14,7 @@ export const getContract = () => {
 export const addProduct = async (name, description, price, imageUrl) => {
     const contract = getContract();
     const product_price = ethers.parseEther(price);
-    console.log(product_price);
+    console.log(name, description, product_price, imageUrl);
     const tx = await contract.listProduct(name, product_price, description, imageUrl);
     await tx.wait();
     console.log("Product listed");

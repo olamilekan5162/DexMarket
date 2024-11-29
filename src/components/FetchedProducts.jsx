@@ -23,7 +23,7 @@ const FetchedProducts = () => {
   
   return (
     <>
-      {loading && <div className="ml-4px">Loading...</div>}
+      {loading && <div className="ml-4px self-left">Loading...</div>}
     <div className="w-full flex flex-row flex-wrap px-auto justify-center gap-4">
       {
         products.map((product) =>{

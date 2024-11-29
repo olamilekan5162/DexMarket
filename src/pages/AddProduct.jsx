@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { addProduct } from '../contractAP.js'
 // import ProductDb from '../../ProductDb.json'
 const AddProduct = () => {
   
@@ -7,12 +8,10 @@ const AddProduct = () => {
   const [description, setDescription] = useState('')
   const [image, setImage] = useState('')
   
-  const submitProduct = (e) => {
+  const submitProduct = async (e) => {
     e.preventDefault()
-    alert(`name: ${name}
-    price: ${price}
-    description: ${description}
-    image url: ${image}`)
+    await addProduct(name, description, price, image)
+    console.log('Product added successfully')
   }
   
   return (
