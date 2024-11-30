@@ -4,9 +4,11 @@ const useConnectWallet = () => {
   
   const [isConnected, setIsConnected] = useState(false);
   const [account, setAccount] = useState('');
+  
   //Connect Wallet
   async function connectWallet() {
     try {
+      if (isConnected) return;
       await window.ethereum.request({
         method: 'wallet_switchEthereumChain',
         params: [{ chainId: '0xaa36a7' }],
@@ -33,12 +35,19 @@ const useConnectWallet = () => {
   
       console.log(account);
     } catch (switchError) {
-      console.log(switchError)
+      alert(switchError)
       if (switchError.code === 4902) {
         alert("Please connect to the Sepolia Network");
     }
   }
 }
-return { connectWallet, account, isConnected }
+
+const disconnectWallet = () => {
+  if (!isConnected) return;
+  setIsConnected(false)
+  setAccount('')
+}
+
+return { connectWallet, account, isConnected, disconnectWallet }
 };
 export default useConnectWallet

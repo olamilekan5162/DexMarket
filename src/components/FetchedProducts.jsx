@@ -1,4 +1,3 @@
-// import ProductDb from '../../ProductDb.json'
 import { Link } from 'react-router-dom'
 import { buyProduct, listProducts } from '../contractAP.js'
 import { ethers } from 'ethers'
