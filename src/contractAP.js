@@ -32,9 +32,14 @@ export const listProducts = async () => {
 }
 
 export const buyProduct = async (id, price) => {
+  try {
     const contract = getContract();
     const value = ethers.parseEther(price);
     const tx = await contract.buyProduct(id, { value });
     await tx.wait();
     console.log("Product bought");
+  }catch(error){
+    console.log(error)
+    alert(`faileed to buy product ${error.reason}`)
+  }
 }
