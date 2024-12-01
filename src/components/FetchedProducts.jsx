@@ -12,9 +12,7 @@ const FetchedProducts = () => {
     await buyProduct(name, id, price)
   }
   useEffect(() => {
-    if(!isConnected){
-      return
-    }
+    if(!isConnected) return;
 
     const getProducts = async () => {
       const product = await listProducts()
@@ -27,7 +25,7 @@ const FetchedProducts = () => {
   return (
     <>
       {loading && <div className="ml-4px self-start">Loading...</div>}
-    <div className="w-full flex flex-row flex-wrap px-auto justify-center gap-4">
+      <div className="w-full flex flex-row flex-wrap px-auto justify-center gap-4">
       {
         products.map((product) =>{
           return(
