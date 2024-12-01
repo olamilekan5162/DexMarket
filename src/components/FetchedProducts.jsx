@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { buyProduct, listProducts } from '../contractAP.js'
 import { ethers } from 'ethers'
 import { useState, useEffect } from 'react'
@@ -8,8 +7,7 @@ const FetchedProducts = () => {
   const [loading, setLoading] = useState(true)
 
   const buy = async (name, id, price) => {
-    await buyProduct(id, price)
-    alert(`${name} bought successfully. Thank you.`)
+    await buyProduct(name, id, price)
   }
   useEffect(() => {
     const getProducts = async () => {

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   const { connectWallet, account, isConnected, disconnectWallet} = useConnectWallet();
+  
   const handleConnect = async () => {
     await connectWallet()
   }

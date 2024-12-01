@@ -14,10 +14,9 @@ export const getContract = () => {
 export const addProduct = async (name, description, price, imageUrl) => {
     const contract = getContract();
     const product_price = ethers.parseEther(price);
-    console.log(name, description, product_price, imageUrl);
     const tx = await contract.listProduct(name, product_price, description, imageUrl);
     await tx.wait();
-    console.log("Product listed");
+    alert(`${name} added successfully`);
 }
 
 export const listProducts = async () => {
@@ -31,15 +30,25 @@ export const listProducts = async () => {
     return products;
 }
 
-export const buyProduct = async (id, price) => {
+export const buyProduct = async (name, id, price) => {
   try {
     const contract = getContract();
     const value = ethers.parseEther(price);
     const tx = await contract.buyProduct(id, { value });
     await tx.wait();
-    console.log("Product bought");
+    console.log(`${name} bought successfully, thank you.`);
   }catch(error){
     console.log(error)
-    alert(`faileed to buy product ${error.reason}`)
+    alert(`failed to buy ${name}: ${error.reason} please check back when restocked`)
+  }
+}
+
+export const getTransactions = async () =>{
+  try {
+    const contract = getContract();
+    const txHistory = await contract.getAllTransactions();
+    return txHistory
+  }catch(error){
+    console.log(error.message)
   }
 }

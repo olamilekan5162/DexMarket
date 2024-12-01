@@ -1,5 +1,20 @@
 import { Link } from 'react-router-dom'
+import { getTransactions } from '../contractAP';
+import { useState, useEffect } from 'react';
+
+
 const Transactions = () => {
+  const [loading, setLoading] = useState(false)
+  const [transactions, setTransactions] = useState([])
+
+  useEffect( () => {
+    const myTransactions = () => {
+
+    }
+    myTransactions()
+  },[])
+
+
   return (
     <div className="w-full flex flex-col px-6 mt-28 text-center gap-6">
       <h1 className="font-bold text-blue-700 text-xl">Transactions</h1>
@@ -14,6 +29,7 @@ const Transactions = () => {
         <Link className="hover:text-blue-700" to="/"> &#8592; back home</Link>
       </div>
       <div className=" container flex flex-col gap-4">
+        { }
         <div className="flex flex-row border-b border-blue-700 items-center justify-between p-2 hover:shadow-lg">
           <div className='text-left'>
             <h1 className="font-bold">Sales</h1>
