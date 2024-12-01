@@ -1,22 +1,28 @@
 import { buyProduct, listProducts } from '../contractAP.js'
 import { ethers } from 'ethers'
 import { useState, useEffect } from 'react'
+import useConnectWallet from '../hooks/useConnectWallet.jsx'
 
 const FetchedProducts = () => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
+  const {isConnected} = useConnectWallet()
 
   const buy = async (name, id, price) => {
     await buyProduct(name, id, price)
   }
   useEffect(() => {
+    if(!isConnected){
+      return
+    }
+
     const getProducts = async () => {
       const product = await listProducts()
       setProducts(product)
       setLoading(false)
     }
     getProducts()
-  },[])
+  },[isConnected])
   
   return (
     <>

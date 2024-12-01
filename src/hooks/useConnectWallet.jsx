@@ -32,13 +32,11 @@ const useConnectWallet = () => {
       setIsConnected(true);
       const account = await accounts[0];
       setAccount(account);
-  
-      console.log(account);
     } catch (switchError) {
+      alert(switchError)
       if (switchError.code === 4902) {
         alert("Please connect to the Sepolia Network");
     }
-    alert(switchError)
   }
 }
 
