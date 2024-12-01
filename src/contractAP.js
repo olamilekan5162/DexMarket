@@ -4,11 +4,15 @@ import abi from './abi.json';
 const contractAddress = "0xFA7202FE4096ABFb517f23ff894d0D303AA16267";
 const contractABI = abi;
 
-const provider = new ethers.BrowserProvider(window.ethereum);
-const signer = await provider.getSigner();
+const getSigner = async () =>{
+  const provider = new ethers.BrowserProvider(window.ethereum);
+  const signer = await provider.getSigner();
+  return signer
+}
 
 export const getContract = () => {
-    return new ethers.Contract(contractAddress, contractABI, signer);
+  const signer = getSigner()
+  return new ethers.Contract(contractAddress, contractABI, signer);
 }
 
 export const addProduct = async (name, description, price, imageUrl) => {
