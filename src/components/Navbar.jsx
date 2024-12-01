@@ -7,7 +7,7 @@ const Navbar = () => {
   const { connectWallet, account, isConnected, disconnectWallet} = useConnectWallet();
   
   const handleConnect = async () => {
-    await connectWallet()
+    connectWallet()
   }
   
     return ( 
@@ -21,7 +21,7 @@ const Navbar = () => {
                 <li className="hover:text-blue-700"><Link to="/">Home</Link></li>
                 <li className="hover:text-blue-700"><Link to="/transactions">Transactions</Link></li>
                 <li className='w-9 h-9 rounded-full overflow-hidden'><img className='w-9 h-9' src={profile} alt="profile" /></li>
-                <li><button className="p-1 border border-blue-700 rounded-md hover:bg-blue-700 hover:text-white" onClick={isConnected ? () => disconnectWallet() : () => handleConnect()}>{isConnected ? `${account.slice(0,5)}...${account.slice(-5)}` : 'Connect Wallet'}</button></li>
+                <li><button className="p-1 border border-blue-700 rounded-md hover:bg-blue-700 hover:text-white" onClick={isConnected ? disconnectWallet : handleConnect}>{isConnected ? `${account.slice(0,5)}...${account.slice(-5)}` : 'Connect Wallet'}</button></li>
             </ul>
         </div>
      );

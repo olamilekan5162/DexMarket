@@ -4,11 +4,18 @@ import { useState, useEffect } from 'react';
 
 
 const Transactions = () => {
-  const [loading, setLoading] = useState(false)
   const [transactions, setTransactions] = useState([])
+  const [loading, setLoading] = useState(true)
+
 
   useEffect( () => {
-    const myTransactions = () => {
+
+    const myTransactions = async () => {
+      const transact = await getTransactions()
+      console.log(transact)
+      // setTransactions(transact)
+      // setLoading(false)
+      // console.log(transactions.amount)
 
     }
     myTransactions()
