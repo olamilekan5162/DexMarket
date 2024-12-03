@@ -1,11 +1,11 @@
 import Hero from "../components/Hero";
-import Products from "../components/Products";
+// import Products from "../components/Products";
 
 const Homepage = () => {
   return (
     <div className="mt-28">
       <Hero />
-      <Products />
+      {/* <Products /> */}
     </div>
     )
 }
