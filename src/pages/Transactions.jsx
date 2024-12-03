@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { getTransactions } from '../contractAP';
 import { useState, useEffect } from 'react';
+import { ethers } from 'ethers'
 
 
 const Transactions = () => {
@@ -12,10 +13,8 @@ const Transactions = () => {
 
     const myTransactions = async () => {
       const transact = await getTransactions()
-      console.log(transact)
-      // setTransactions(transact)
-      // setLoading(false)
-      // console.log(transactions.amount)
+      setTransactions(transact)
+      setLoading(false)
 
     }
     myTransactions()
@@ -35,9 +34,27 @@ const Transactions = () => {
         </select>
         <Link className="hover:text-blue-700" to="/"> &#8592; back home</Link>
       </div>
-      <div className=" container flex flex-col gap-4">
-        { }
-        <div className="flex flex-row border-b border-blue-700 items-center justify-between p-2 hover:shadow-lg">
+      {loading && <div>Loading</div>}
+      <div className=" container flex flex-col gap-5">
+        { transactions.map((transact) => {
+          return(
+            <div key={transact.id} className="flex flex-row shadow-sm border-b items-center justify-between p-3 hover:border-blue-700">
+              <div className='text-left'>
+                <h1 className="font-bold">Sales</h1>
+                <p className="text-gray-500 text-sm">Seller: <span className='text-black'>{`${transact.seller.slice(0,5)}...${transact.seller.slice(-5)}`}</span></p>
+                <p className="text-gray-500 text-sm">Buyer: <span className='text-black'>{`${transact.buyer.slice(0,5)}...${transact.buyer.slice(-5)}`}</span></p>
+                <p className="text-xs mt-1 text-blue-700">{new Date(transact.timestamp.toString() * 1000).toLocaleString()}</p>
+              </div>
+              <div className='text-right'>
+                <h1 className="font-bold">{ethers.formatEther(transact.amount)} ETH</h1>
+                <p className="text-green-700">Success</p>
+              </div>
+            </div>
+          )
+
+        })
+        }
+        {/* <div className="flex flex-row border-b border-blue-700 items-center justify-between p-2 hover:shadow-lg">
           <div className='text-left'>
             <h1 className="font-bold">Sales</h1>
             <p className="text-gray-500">Men T Shirt</p>
@@ -71,7 +88,7 @@ const Transactions = () => {
             <h1 className="font-bold">-$1000</h1>
             <p className="text-green-700">Success</p>
           </div>
-        </div>
+        </div> */}
         
       </div>
     </div>
