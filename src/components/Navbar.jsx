@@ -1,10 +1,10 @@
 import search from '../assets/icons/icons8-search.svg'
 import profile from '../assets/images/loko.jpg'
-import useConnectWallet from '../hooks/useConnectWallet'
+// import useConnectWallet from '../hooks/useConnectWallet'
 import { Link } from 'react-router-dom'
 
-const Navbar = () => {
-  const { connectWallet, account, isConnected, disconnectWallet} = useConnectWallet();
+const Navbar = ( { connectWallet, account, isConnected, disconnectWallet } ) => {
+  // const { connectWallet, account, isConnected, disconnectWallet} = useConnectWallet();
   
   const handleConnect = async () => {
     connectWallet()

@@ -2,10 +2,15 @@ import { Outlet } from 'react-router-dom'
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const MainLayout = () => {
+const MainLayout = ({ connectWallet, account, isConnected, disconnectWallet }) => {
   return (
     <>
-      <Navbar />
+      <Navbar 
+      connectWallet = {connectWallet}
+      account = {account}
+      isConnected = {isConnected}
+      disconnectWallet = {disconnectWallet}
+      />
       <Outlet />
       <Footer />
     </>

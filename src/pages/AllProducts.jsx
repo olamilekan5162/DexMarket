@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import FetchedProducts from '../components/FetchedProducts'
-const AllProducts = () => {
+const AllProducts = ({ isConnected}) => {
     return ( 
         <div className="w-full mt-28 px-6 flex flex-col text-center gap-6 ">
             <h1 className="font-bold text-blue-700 text-xl">All Exclusive Products</h1>
@@ -8,7 +8,7 @@ const AllProducts = () => {
                 <h1>All Products</h1>
                 <Link className="hover:text-blue-700" to="/">&#8592; back home</Link>
               </div>
-              <FetchedProducts />
+              <FetchedProducts isConnected = {isConnected} />
         </div>
      );
 }

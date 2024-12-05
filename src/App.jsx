@@ -5,24 +5,35 @@ import AllProducts from "./pages/AllProducts";
 import Transactions from './pages/Transactions';
 import AddProduct from './pages/AddProduct';
 import NotFound from './pages/NotFound';
-
-
-const router = createBrowserRouter(createRoutesFromElements(
-  <>
-
-  <Route path='/' element={<MainLayout />}>
-    <Route index element={<Homepage />} />
-    <Route path='/allproducts' element={<AllProducts />} />
-    <Route path='/transactions' element={<Transactions />} />
-    <Route path='/addProduct' element={<AddProduct />} />
-  </Route>
-  <Route path='*' element={<NotFound />} />
-
-  </>
-
-));
+import useConnectWallet from './hooks/useConnectWallet'
 
 const App = () => {
+
+  const { connectWallet, account, isConnected, disconnectWallet } = useConnectWallet();
+
+  const router = createBrowserRouter(createRoutesFromElements(
+    <>
+  
+    <Route path='/' element={
+      <MainLayout
+      connectWallet = {connectWallet}
+      account = {account}
+      isConnected = {isConnected}
+      disconnectWallet = {disconnectWallet}
+      />
+      }>
+      <Route index element={<Homepage isConnected = {isConnected} />} />
+      <Route path='/allproducts' element={<AllProducts isConnected = {isConnected} />} />
+      <Route path='/transactions' element={<Transactions />} />
+      <Route path='/addProduct' element={<AddProduct />} />
+    </Route>
+    <Route path='*' element={<NotFound />} />
+  
+    </>
+  
+  ));
+
+
   return ( 
     <>
       <RouterProvider router={router}/>
