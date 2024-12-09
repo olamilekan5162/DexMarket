@@ -1,6 +1,7 @@
 import { buyProduct, listProducts } from '../contractAP.js'
 import { ethers } from 'ethers'
 import { useState, useEffect, useCallback } from 'react'
+import Spinner from './Spinner'
 // import useConnectWallet from '../hooks/useConnectWallet'
 
 const FetchedProducts = ({ isConnected, isHome }) => {
@@ -34,7 +35,7 @@ const FetchedProducts = ({ isConnected, isHome }) => {
   
   return (
     <>
-      {loading && <div className="ml-4px self-start">Loading...</div>}
+    {loading && <Spinner loading={loading} />}
     <div className="w-full flex flex-row flex-wrap px-auto justify-center gap-4">
       {
         products.map((product) =>{

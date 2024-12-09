@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import { getTransactions } from '../contractAP';
 import { useState, useEffect } from 'react';
-import { ethers } from 'ethers'
+import { ethers } from 'ethers';
+import Spinner from '../components/Spinner';
 
 
 const Transactions = () => {
@@ -34,7 +35,7 @@ const Transactions = () => {
         </select>
         <Link className="hover:text-blue-700" to="/"> &#8592; back home</Link>
       </div>
-      {loading && <div>Loading</div>}
+      {loading && <Spinner loading={loading}/>}
       <div className=" container flex flex-col gap-5">
         { transactions.map((transact) => {
           return(

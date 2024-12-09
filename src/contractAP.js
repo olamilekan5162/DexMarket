@@ -19,6 +19,7 @@ export const addProduct = async (name, description, price, imageUrl) => {
     const contract = await getContract();
     const product_price = ethers.parseEther(price);
     const tx = await contract.listProduct(name, product_price, description, imageUrl);
+    alert('Processing please wait...')
     await tx.wait();
     alert(`${name} added successfully`);
 }
@@ -39,6 +40,7 @@ export const buyProduct = async (name, id, price) => {
     const contract = await getContract();
     const value = ethers.parseEther(price);
     const tx = await contract.buyProduct(id, { value });
+    alert('Processing please wait...')
     await tx.wait();
     alert(`${name} bought successfully, thank you.`);
   }catch(error){
