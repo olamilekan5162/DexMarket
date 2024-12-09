@@ -1,6 +1,6 @@
 import { buyProduct, listProducts } from '../contractAP.js'
 import { ethers } from 'ethers'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 // import useConnectWallet from '../hooks/useConnectWallet'
 
 const FetchedProducts = ({ isConnected }) => {
@@ -10,20 +10,21 @@ const FetchedProducts = ({ isConnected }) => {
   const buy = async (name, id, price) => {
     await buyProduct(name, id, price)
   }
-  useEffect(() => {
-    const getProducts = async () => {
+
+  const getProducts = useCallback(async () =>{
+    if (isConnected){
       console.log(isConnected)
-
-      if (isConnected){
-        console.log(isConnected)
-        const product = await listProducts()
-        setProducts(product)
-        setLoading(false)
-      }
-
-      }
-    getProducts()
+      const product = await listProducts()
+      const filteredProduct = product.filter(prod => prod.isSold === false)
+      setProducts(filteredProduct)
+      setLoading(false)
+    }
   },[isConnected])
+
+
+  useEffect(() => {
+    getProducts()
+  },[getProducts])
   
   return (
     <>

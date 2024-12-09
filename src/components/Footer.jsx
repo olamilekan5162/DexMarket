@@ -1,4 +1,10 @@
 import { Link } from "react-router-dom";
+import github from '../assets/icons/github.svg'
+import linkedin from '../assets/icons/linkedin.svg'
+import twitter from '../assets/icons/twitter.svg'
+
+
+
 const Footer = () => {
   return ( 
       <div className="min-h-[200px] mt-10 bg-blue-950 text-white text-sm grid grid-cols-4 gap-3 p-4">
@@ -27,7 +33,13 @@ const Footer = () => {
           
           <div className="flex flex-col text-left gap-1">
               <p className="font-bold ">Contact Information</p>
-              <p>contact me at Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, libero!</p>
+              <p>contact me and follow on the following platform</p>
+              <div className="flex flex-row items-center gap-2">
+                <Link to="https://github.com/olamilekan5162"><img src={github} alt="oracle github" className="w-8 h-auto filter invert hover:fill-blue-700" /></Link>
+                <Link to="https://www.linkedin.com/in/opeyemi-olalekan-10864523a"><img src={linkedin} alt="oracle linkedin" className="w-8 h-auto filter invert" /></Link>
+                <Link to="https://x.com/olamilekan5162"><img src={twitter} alt="oracle linkedin" className="w-8 h-auto filter invert" /></Link>
+
+              </div>
               
           </div>
 
