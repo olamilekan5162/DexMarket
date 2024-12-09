@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import Spinner from './Spinner'
 // import useConnectWallet from '../hooks/useConnectWallet'
 
-const FetchedProducts = ({ isConnected, isHome }) => {
+const FetchedProducts = ({ isConnected, isHome, search, isSearch }) => {
 
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -16,9 +16,14 @@ const FetchedProducts = ({ isConnected, isHome }) => {
   const getProducts = useCallback(async () =>{
     
     if (isConnected){
-      console.log(isConnected)
+
       const product = await listProducts()
-      const filteredProduct = product.filter(prod => prod.isSold === false)
+      let filteredProduct = product.filter(prod => prod.isSold === false)
+
+      if (isSearch){
+        filteredProduct = product.filter(prod => prod.isSold === false && prod.name.toLowerCase().includes(search.toLowerCase()))
+      }
+
       if (isHome){
         setProducts(filteredProduct.slice(0,4))
       }else{
@@ -27,7 +32,7 @@ const FetchedProducts = ({ isConnected, isHome }) => {
       
       setLoading(false)
     }
-  },[isConnected])
+  },[isConnected, search])
 
 
   useEffect(() => {

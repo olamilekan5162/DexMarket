@@ -1,8 +1,7 @@
 import searchIcon from '../assets/icons/icons8-search.svg'
 import profile from '../assets/images/loko.jpg'
 // import useConnectWallet from '../hooks/useConnectWallet'
-import { NavLink } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 const Navbar = ( { connectWallet, account, isConnected, disconnectWallet } ) => {
@@ -17,7 +16,10 @@ const Navbar = ( { connectWallet, account, isConnected, disconnectWallet } ) => 
 
   const handleSearch = async (e) => {
     e.preventDefault()
-    navigate('/search')
+    navigate({
+      pathname: '/search',
+      search: `?query=${search}`
+    })
 
   }
 
@@ -29,7 +31,7 @@ const Navbar = ( { connectWallet, account, isConnected, disconnectWallet } ) => 
             <form  
               className="border border-black justify-between rounded-md p-2 flex flex-row items-center"
               onSubmit={handleSearch}>
-                <input className='border-none outline-none' value={search} onChange={(e) => setSearch(e.value)} type="text" name="search" id="search" placeholder="Search Product" />
+                <input className='border-none outline-none' value={search} onChange={(e) => setSearch(e.target.value)} type="text" name="search" id="search" placeholder="Search Product" />
                 <button type="submit"><img className='w-6 h-auto' src={searchIcon} alt="search-icon" /></button>
             </form>
             <ul className="flex flex-row space-x-6 items-center">

@@ -14,7 +14,6 @@ const Transactions = () => {
 
     const myTransactions = async () => {
       const transact = await getTransactions()
-      transact.reverse()
       setTransactions(transact)
       setLoading(false)
     }

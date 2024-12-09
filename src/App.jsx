@@ -23,11 +23,12 @@ const App = () => {
       disconnectWallet = {disconnectWallet}
       />
       }>
+        
       <Route index element={<Homepage isConnected = {isConnected} />} />
       <Route path='/allproducts' element={<AllProducts isConnected = {isConnected} />} />
       <Route path='/transactions' element={<Transactions />} />
       <Route path='/addproduct' element={<AddProduct />} />
-      <Route path='/search' element={<Search />} />
+      <Route path='/search' element={<Search isConnected = {isConnected} />} />
     </Route>
     <Route path='*' element={<NotFound />} />
   
