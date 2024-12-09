@@ -1,16 +1,20 @@
 import { useState } from 'react'
 import { addProduct } from '../contractAP.js'
-// import ProductDb from '../../ProductDb.json'
+import { useNavigate } from 'react-router-dom'
+
 const AddProduct = () => {
   
   const [name, setName] = useState('')
   const [price, setPrice] = useState(0)
   const [description, setDescription] = useState('')
   const [image, setImage] = useState('')
+
+  const navigate = useNavigate()
   
   const submitProduct = async (e) => {
     e.preventDefault()
     await addProduct(name, description, price, image)
+    return navigate('/')
   }
   
   return (
@@ -68,7 +72,7 @@ const AddProduct = () => {
             Image Url
 
             <input 
-            type="text" 
+            type="url" 
             name="image" 
             value={image}
             required

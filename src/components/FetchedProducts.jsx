@@ -14,6 +14,7 @@ const FetchedProducts = ({ isConnected, isHome }) => {
   }
 
   const getProducts = useCallback(async () =>{
+    
     if (isConnected){
       console.log(isConnected)
       const product = await listProducts()
