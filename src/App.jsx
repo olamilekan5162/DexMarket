@@ -4,6 +4,7 @@ import Homepage from "./pages/Homepage";
 import AllProducts from "./pages/AllProducts";
 import Transactions from './pages/Transactions';
 import AddProduct from './pages/AddProduct';
+import Search from './pages/Search';
 import NotFound from './pages/NotFound';
 import useConnectWallet from './hooks/useConnectWallet'
 
@@ -25,7 +26,8 @@ const App = () => {
       <Route index element={<Homepage isConnected = {isConnected} />} />
       <Route path='/allproducts' element={<AllProducts isConnected = {isConnected} />} />
       <Route path='/transactions' element={<Transactions />} />
-      <Route path='/addProduct' element={<AddProduct />} />
+      <Route path='/addproduct' element={<AddProduct />} />
+      <Route path='/search' element={<Search />} />
     </Route>
     <Route path='*' element={<NotFound />} />
   

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import FetchedProducts from '../components/FetchedProducts'
+
 const AllProducts = ({ isConnected}) => {
     return ( 
         <div className="w-full mt-28 px-6 flex flex-col text-center gap-6 ">

@@ -1,10 +1,15 @@
-import search from '../assets/icons/icons8-search.svg'
+import searchIcon from '../assets/icons/icons8-search.svg'
 import profile from '../assets/images/loko.jpg'
 // import useConnectWallet from '../hooks/useConnectWallet'
 import { NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 const Navbar = ( { connectWallet, account, isConnected, disconnectWallet } ) => {
   // const { connectWallet, account, isConnected, disconnectWallet} = useConnectWallet();
+
+  const [search, setSearch] = useState('')
+  const navigate = useNavigate()
   
   const handleConnect = async () => {
     connectWallet()
@@ -12,6 +17,7 @@ const Navbar = ( { connectWallet, account, isConnected, disconnectWallet } ) => 
 
   const handleSearch = async (e) => {
     e.preventDefault()
+    navigate('/search')
 
   }
 
@@ -20,12 +26,11 @@ const Navbar = ( { connectWallet, account, isConnected, disconnectWallet } ) => 
     return ( 
         <div className="w-full h-24 flex flex-row shadow-md px-6 items-center justify-between bg-white fixed top-0 left-0">
             <div className="text-blue-700 font-semibold">DEX<span className="text-black">MARKET</span></div>
-            <form 
-              action="/" 
+            <form  
               className="border border-black justify-between rounded-md p-2 flex flex-row items-center"
-              onClick={handleSearch}>
-                <input className='border-none outline-none' type="text" name="search" id="search" placeholder="Search Product" />
-                <button type="submit"><img className='w-6 h-auto' src={search} alt="search-icon" /></button>
+              onSubmit={handleSearch}>
+                <input className='border-none outline-none' value={search} onChange={(e) => setSearch(e.value)} type="text" name="search" id="search" placeholder="Search Product" />
+                <button type="submit"><img className='w-6 h-auto' src={searchIcon} alt="search-icon" /></button>
             </form>
             <ul className="flex flex-row space-x-6 items-center">
                 <li><NavLink to="/" className={linkStyle}>Home</NavLink></li>
