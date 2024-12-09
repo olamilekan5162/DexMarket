@@ -3,7 +3,8 @@ import { ethers } from 'ethers'
 import { useState, useEffect, useCallback } from 'react'
 // import useConnectWallet from '../hooks/useConnectWallet'
 
-const FetchedProducts = ({ isConnected }) => {
+const FetchedProducts = ({ isConnected, isHome }) => {
+
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -16,7 +17,12 @@ const FetchedProducts = ({ isConnected }) => {
       console.log(isConnected)
       const product = await listProducts()
       const filteredProduct = product.filter(prod => prod.isSold === false)
-      setProducts(filteredProduct)
+      if (isHome){
+        setProducts(filteredProduct.slice(0,4))
+      }else{
+        setProducts(filteredProduct)
+      }
+      
       setLoading(false)
     }
   },[isConnected])

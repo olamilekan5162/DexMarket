@@ -7,7 +7,7 @@ const Products = ({isConnected}) => {
                 <h1>Our Products</h1>
                 <Link className="hover:text-blue-700" to="/allproducts">view all &#8594;</Link>
             </div>
-            <FetchedProducts isConnected={isConnected}/>
+            <FetchedProducts isConnected={isConnected} isHome={true} />
         </div>
      );
 }

@@ -11,7 +11,6 @@ const AddProduct = () => {
   const submitProduct = async (e) => {
     e.preventDefault()
     await addProduct(name, description, price, image)
-    alert(`${name} added successfully`)
   }
   
   return (
